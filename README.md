@@ -1,3 +1,13 @@
+# Youtube-Colone
+## Main Page
+![1](https://github.com/erkang-xia/youtube-colone/blob/main/Screen%20Shot%202023-06-15%20at%202.20.39%20PM.png?raw=true)
+## Search
+![2](https://github.com/erkang-xia/youtube-colone/blob/main/Screen%20Shot%202023-06-15%20at%202.20.23%20PM.png?raw=true)
+## Video Page
+![3](https://github.com/erkang-xia/youtube-colone/blob/main/Screen%20Shot%202023-06-15%20at%202.19.05%20PM.png?raw=true)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
