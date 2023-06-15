@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Box } from "@mui/material";
+import {
+  Navbar,
+  Feed,
+  VideoDetail,
+  ChannelDetail,
+  SearchFeed,
+} from "./components";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [sideBarStatus, setSideBarStatus] = useState(false);
+  const handleDataChange = (newData) => {
+    setSideBarStatus(newData);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Box sx={{ backgroundColor: "#000" }}>
+        <Navbar sideBarStatus={sideBarStatus} onDataChange={handleDataChange} />
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <Feed
+                sideBarStatus={sideBarStatus}
+                onDataChange={handleDataChange}
+              />
+            }
+          ></Route>
+          <Route path="/video/:id" element={<VideoDetail />}></Route>
+          <Route path="/channel/:id" element={<ChannelDetail />}></Route>
+          <Route path="/search/:searchTerm" element={<SearchFeed />}></Route>
+        </Routes>
+      </Box>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
